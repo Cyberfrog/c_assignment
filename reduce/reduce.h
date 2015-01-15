@@ -1,0 +1,1 @@
+int reduce(int *array,int length,int *(func)(int ,int ,int ,int *),int );

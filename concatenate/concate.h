@@ -1,0 +1,1 @@
+int concat(int *array1, int len_of_array1, int *array2, int len_of_array2, int *result_array);

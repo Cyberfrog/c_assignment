@@ -1,0 +1,1 @@
+int * map(int *,int ,int (*func)(int ,int ,int *));

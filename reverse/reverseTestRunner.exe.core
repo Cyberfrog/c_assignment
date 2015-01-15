@@ -1,0 +1,21 @@
+[main] reverseTestRunner 4368 (0) exception: trapped!
+[main] reverseTestRunner 4368 (0) exception: code 0xC00000FD at 0x4017D3
+[main] reverseTestRunner 4368 (0) exception: ax 0x1E003FFC bx 0xFFFFFFFA cx 0x452E94 dx 0x1FFFFFFC
+[main] reverseTestRunner 4368 (0) exception: si 0xFFFFFF60 di 0xFFFFFFEC bp 0x244FED0 sp 0x244FE8C
+[main] reverseTestRunner 4368 (0) exception: exception is: STATUS_STACK_OVERFLOW
+[main] reverseTestRunner 4368 (0) stack: Stack trace:
+[main] reverseTestRunner 4368 (0) stack: frame 0: sp = 0x244FA2C, pc = 0x6100A2C3
+[main] reverseTestRunner 4368 (0) stack: frame 1: sp = 0x244FA68, pc = 0x774FB679
+[main] reverseTestRunner 4368 (0) stack: frame 2: sp = 0x244FA8C, pc = 0x774FB64B
+[main] reverseTestRunner 4368 (0) stack: frame 3: sp = 0x244FB3C, pc = 0x774B010F
+[main] reverseTestRunner 4368 (0) stack: frame 4: sp = 0x244FED0, pc = 0x40123B
+[main] reverseTestRunner 4368 (0) stack: frame 5: sp = 0x244FEDC, pc = 0x40134F
+[main] reverseTestRunner 4368 (0) stack: frame 6: sp = 0x244FEFC, pc = 0x61004402
+[main] reverseTestRunner 4368 (0) stack: frame 7: sp = 0x244FF50, pc = 0x61004420
+[main] reverseTestRunner 4368 (0) stack: frame 8: sp = 0x244FF5C, pc = 0x40190E
+[main] reverseTestRunner 4368 (0) stack: frame 9: sp = 0x244FF6C, pc = 0x40103A
+[main] reverseTestRunner 4368 (0) stack: frame 10: sp = 0x244FF88, pc = 0x76383677
+[main] reverseTestRunner 4368 (0) stack: frame 11: sp = 0x244FF94, pc = 0x774D9F42
+[main] reverseTestRunner 4368 (0) stack: frame 12: sp = 0x244FFD4, pc = 0x774D9F15
+[main] reverseTestRunner 4368 (0) stack: frame 13: sp = 0x244FFEC, pc = 0x0
+[main] reverseTestRunner 4368 (0) stack: End of stack trace

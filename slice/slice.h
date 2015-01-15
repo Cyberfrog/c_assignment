@@ -1,0 +1,1 @@
+int slice(int *array,int length,int start_index,int end_index,int **result);

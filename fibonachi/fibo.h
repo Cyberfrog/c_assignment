@@ -1,0 +1,1 @@
+int fibo(int numberofterm,int *array);
