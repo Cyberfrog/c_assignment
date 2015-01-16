@@ -2,43 +2,57 @@
 #include <stdlib.h>
 int less_filter(int *array, int length, int threshold, int **result_array){
 
-	int i;
+	int  iteration;
 	int tempIndex=-1;
 	int *temp =(int *)malloc(sizeof(int)*length);
 	if(length<0){
 		return 0;
 	}
-	for(i=0;i<length;i++){
-		if(array[i]>threshold){
-			temp[++tempIndex] = array[i];	
+	for( iteration=0; iteration<length; iteration++){
+		if(array[ iteration]>threshold){
+			temp[++tempIndex] = array[ iteration];	
 		}
 	}
 	
 	*result_array =(int *)malloc(sizeof(int)*tempIndex+1);
 
-	for(i=0;i<=tempIndex;i++){		
-		(*result_array)[i]=temp[i];
+	for( iteration=0; iteration<=tempIndex; iteration++){		
+		(*result_array)[ iteration]=temp[ iteration];
 	}
 	free(temp);
 	return tempIndex+1;
 }
 int int_filter(int *collection,int length,int **filterd,int (*predicate)(int ,int,int *)){
-	int i;
+	int  iteration;
 	int filterdSize =0;
 	int filterdIndex =-1;
-	for (i=0;i<length;i++){
-		if(predicate(collection[i],i,collection)){
+	for ( iteration=0; iteration<length; iteration++){
+		if(predicate(collection[ iteration], iteration,collection)){
 			filterdSize++;
 		}
 	}
 	*filterd =(int *)malloc(sizeof(int)*filterdSize);
 
-	for (i = 0; i < length; i++)
+	for ( iteration = 0;  iteration < length;  iteration++)
 	{
-		if(predicate(collection[i],i,collection)){
+		if(predicate(collection[ iteration], iteration,collection)){
 
-			 (*filterd)[++filterdIndex] = collection[i];
+			 (*filterd)[++filterdIndex] = collection[ iteration];
 		}
 	}
+	return filterdSize;
+}
+
+int string_filter(String *collection,int length,String **filterd,int (*predicate)(String ,int ,String *array)){
+	int  iteration;
+	String *result=(String *)0;
+	int filterdSize = 0;
+	 for ( iteration=0; iteration<length; iteration++){
+		if(predicate(collection[iteration], iteration,collection)){
+			result = (String *)realloc(result,sizeof(String) * (filterdSize+1));
+			result[filterdSize++] = collection[iteration];
+		}
+	}
+	*filterd = result;
 	return filterdSize;
 }

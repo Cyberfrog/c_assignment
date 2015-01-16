@@ -1,5 +1,6 @@
 #include "expr_assert.h"
 #include "filter.h"
+#include "string.h"
 void test_less_filter_removes_the_elementfrom_array_less_than_threshold(){
 	int marks[]={10,20,30,50,70};
 	
@@ -16,7 +17,7 @@ void test_less_filter_removes_the_elementfrom_array_less_than_threshold(){
 void test_less_filter_reurns_0_when_size_is_negative(){
 	int marks[]={10,20,30,50,70};
 	int *result;// = (int *)malloc(sizeof(int)*5);
-	int sizeOfResult = less_filter(&marks,-5,25,&result);
+	int sizeOfResult = less_filter(marks,-5,25,&result);
 	assert(sizeOfResult==0);
 } 
 	int isPass(int  mark,int index ,int *array){
@@ -37,6 +38,21 @@ void test_int_filter_gives_filterd_array_and_return_sizeOf_filterd_array(){
 	assertEqual(expected[0], passMarks[0]);
 	assertEqual(expected[1], passMarks[1]);
 	assertEqual(expected[2], passMarks[2]);
-
-
 }
+int isSouth (String city,int index,String *array){
+	if(city[0]<'d'){
+		return 1;
+	}
+	return 0;
+}
+void test_String_filter_gives_filterd_array_and_return_sizeOf_filterd_array(){
+	String citys[]={"nagpur","bangalor","chennai","pune","delhi"};
+	String *southCitys;
+    String expected[] = {"bangalor","chennai"};
+	int sizeOfSouthCitys;
+	sizeOfSouthCitys = string_filter(citys,5, &southCitys,isSouth);
+	assertEqual(sizeOfSouthCitys,2);
+	assertEqual(strcmp(expected[0], southCitys[0]),0);
+	assertEqual(strcmp(expected[1], southCitys[1]),0);
+}
+
