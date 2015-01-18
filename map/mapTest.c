@@ -44,3 +44,15 @@ void test_string_map_gives_diffrence_in_ascii_values_of_two_string_for_1st_strin
 	assertEqual(strcmp(maped[1],expected[1]),0);
 	assertEqual(strcmp(maped[2],expected[2]),0);
 }
+float add10(float f,int index,float * array){
+	return f+10;
+}
+void test_float_map_returns_address_of_mapped_array(){
+	float f[]={20.5,22.3,12.2,43.3,10.5};
+	float expected []={30.5,32.3,22.2,53.3,20.5};
+	float *maped = float_map(f,5,add10);
+
+	assertEqual(maped[0],expected[0]);
+	assertEqual(maped[1],expected[1]);
+	assertEqual(maped[2],expected[2]);
+}

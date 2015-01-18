@@ -56,3 +56,30 @@ int string_filter(String *collection,int length,String **filterd,int (*predicate
 	*filterd = result;
 	return filterdSize;
 }
+
+int char_filter(char *collection,int length,char **filterd,int (*predicate)(char ,int ,char *array)){
+	int  iteration;
+	char *result=(char *)0;
+	int filterdSize = 0;
+	 for ( iteration=0; iteration<length; iteration++){
+		if(predicate(collection[iteration], iteration,collection)){
+			result = (char *)realloc(result,sizeof(char) * (filterdSize+1));
+			result[filterdSize++] = collection[iteration];
+		}
+	}
+	*filterd = result;
+	return filterdSize;
+}
+int float_filter(float *collection,int length,float **filterd,int (*predicate)(float ,int ,float *array)){
+	int  iteration;
+	float *result=(float *)0;
+	int filterdSize = 0;
+	 for ( iteration=0; iteration<length; iteration++){
+		if(predicate(collection[iteration], iteration,collection)){
+			result = (float *)realloc(result,sizeof(float) * (filterdSize+1));
+			result[filterdSize++] = collection[iteration];
+		}
+	}
+	*filterd = result;
+	return filterdSize;
+}

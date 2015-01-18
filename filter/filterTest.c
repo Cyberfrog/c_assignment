@@ -56,3 +56,31 @@ void test_String_filter_gives_filterd_array_and_return_sizeOf_filterd_array(){
 	assertEqual(strcmp(expected[1], southCitys[1]),0);
 }
 
+int isVowel(char c,int index,char* array){
+	 return (c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='A'||c=='E'||c=='I'||c=='O'||c=='U');
+}
+void test_char_filter_gives_filterd_array_and_return_sizeOf_filterd_array(){
+	char letters[]={'a','r','e','t','t'};
+	char *vowels;
+ 	char expected [] ={'a','e'};
+	int sizeOfvowels;
+	sizeOfvowels = char_filter(letters,5,&vowels,isVowel);
+	assertEqual(sizeOfvowels,2);
+	assertEqual(expected[0], vowels[0]);
+	assertEqual(expected[1], vowels[1]);
+}
+
+
+int lessThan10(float f,int index,float * array){
+	return f<10;
+}
+void test_float_filter_gives_filterd_array_and_return_sizeOf_filterd_array(){
+	float tempratures[]={1.1,2.0,3.5,20.1,10.3};
+	float *lowTemprature;
+ 	float expected [] ={1.1,2.0,3.5};
+	int sizeofLowTemp;
+	sizeofLowTemp = float_filter(tempratures,5,&lowTemprature,lessThan10);
+	assertEqual(sizeofLowTemp,3);
+	assertEqual(expected[0], lowTemprature[0]);
+	assertEqual(expected[1], lowTemprature[1]);
+}

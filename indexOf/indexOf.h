@@ -1,2 +1,2 @@
 int indexOf(char *string, char *subString);
-int subStrCmp(char *,char *,int);
+int isMatch(char *,char *,int);

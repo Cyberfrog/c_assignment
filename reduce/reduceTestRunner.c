@@ -6,8 +6,8 @@ typedef struct{
 } Test;
 
 //code to be updated starts
-TestFn setup,tearDown,fixtureSetup,fixtureTearDown,test_reduce_reduces_the_array_to_single_vlaue;
-Test test[] = {"test_reduce_reduces_the_array_to_single_vlaue",test_reduce_reduces_the_array_to_single_vlaue};
+TestFn setup,tearDown,fixtureSetup,fixtureTearDown,test_reduce_reduces_the_array_to_single_vlaue,test_string_reduce_the_string_array_to_single_vlaue,test_char_reduce_the_string_array_to_single_vlaue,test_float_reduce_the_string_array_to_single_vlaue;
+Test test[] = {"test_reduce_reduces_the_array_to_single_vlaue",test_reduce_reduces_the_array_to_single_vlaue,"test_string_reduce_the_string_array_to_single_vlaue",test_string_reduce_the_string_array_to_single_vlaue,"test_char_reduce_the_string_array_to_single_vlaue",test_char_reduce_the_string_array_to_single_vlaue,"test_float_reduce_the_string_array_to_single_vlaue",test_float_reduce_the_string_array_to_single_vlaue};
 char testFileName[] = {"reduceTest.c"};
 void _setup(){/*CALL_SETUP*/}
 void _tearDown(){/*CALL_TEARDOWN*/}

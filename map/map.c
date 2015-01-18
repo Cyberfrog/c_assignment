@@ -25,3 +25,11 @@ String * string_map(String *array,int length,String (*func)(String ,int ,String 
 	}
 	return mapped;
 }
+float * float_map(float *array,int length,float (*func)(float ,int ,float *)){
+	int i;
+	float *mapped =(float *) malloc(sizeof(float)*length);
+	for(i=0;i<length;i++){
+		mapped[i]=func(array[i],i,array);
+	}
+	return mapped;
+}
