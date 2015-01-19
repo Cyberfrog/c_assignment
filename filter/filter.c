@@ -1,5 +1,6 @@
 #include "filter.h"
 #include <stdlib.h>
+#include <string.h>
 int less_filter(int *array, int length, int threshold, int **result_array){
 
 	int  iteration;
@@ -50,7 +51,8 @@ int string_filter(String *collection,int length,String **filterd,int (*predicate
 	 for ( iteration=0; iteration<length; iteration++){
 		if(predicate(collection[iteration], iteration,collection)){
 			result = (String *)realloc(result,sizeof(String) * (filterdSize+1));
-			result[filterdSize++] = collection[iteration];
+			result[filterdSize] = malloc(sizeof(char)*(strlen(collection[iteration])+1));
+			strcpy(result[filterdSize++], collection[iteration]);
 		}
 	}
 	*filterd = result;
